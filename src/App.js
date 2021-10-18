@@ -1,29 +1,33 @@
-import logo from './logo.svg';
 import './App.css';
 import Navigation from './Components/Navigation/Navigation';
-import Header from './Components/Header/Header';
 import Services from './Components/Services/Services';
 import { BrowserRouter as Router, Link, Switch, Route } from "react-router-dom";
 import Home from './Components/Home/Home';
+import Login from './Components/Login/Login';
+import AuthProvider from './Context/AuthProvider';
 
 function App() {
   return (
+    // <AuthProvider>
     <div className="app">
-
       <Router>
-        <Navigation></Navigation>
-
-        <Switch>
-          <Route exact path="/">
-            <Home></Home>
-          </Route>
-          <Route path="/services">
-            <Services></Services>
-          </Route>
-          
-        </Switch>
-      </Router>
+        <div>
+          <Navigation></Navigation>
+          <Switch>
+            <Route path="/login">
+              <Login />
+            </Route>
+            <Route path="/services">
+              <Services />
+            </Route>
+            <Route path="/">
+              <Home />
+            </Route>
+          </Switch>
+        </div>
+      </Router>     
     </div>
+    // </AuthProvider>
   );
 }
 
