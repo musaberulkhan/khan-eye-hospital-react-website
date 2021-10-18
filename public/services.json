@@ -2,25 +2,50 @@
     {
         "id": "10001",
         "name": "General Outpatient",
-        "image": "",
+        "image": "images/outpatient.jpg",
         "description": "Patients who are referred for surgery from GOPD benefit from lower surgery charges with an option for further subsidies for the economically underprivileged. We are able to keep our GOPD fees low because we operate on the basis of cross subsidation. "
     },
     {
         "id": "10002",
         "name": "Private Outpatient",
-        "image": "",
+        "image": "images/private-outpatient.jpg",
         "description": "The Private Outpatient’s department (POPD) of the hospital together with our sub- speciality services form a unique center for comprehensive ophthalmology in Bangladesh. An all-in-one facility which excels in the provision of advanced eye care."
     },
     {
         "id": "10003",
         "name": "Cataract Surgery ",
-        "image": "",
+        "image": "images/cataract-surgery.jpg",
         "description": "Cataracts occur when changes in the lens of the eye (which is normally clear) cause it to become less transparent. The lens is a crystalline structure that sits just behind the pupil (the black circle in the centre of the eye)."
     },
     {
         "id": "10004",
         "name": "Glaucoma Services",
-        "image": "",
+        "image": "images/glaucoma.jpg",
         "description": "Glaucoma is a symptomless silent killer of vision. we have worldclass facilities of glaucoma diagnosis , management and surgeries including implantation of glaucoma drainage devices."
+    },
+    {
+        "id": "10005",
+        "name": "LASIK & Refractive Surgery",
+        "image": "images/lasik-eye-surgery.jpg",
+        "description": "ASIK is a surgical procedure for correcting near sightedness (myopia), far sightedness (hyperopia) and cylindrical (Astigmatic) refractive errors. LASIK stands for Laser-Assisted in Situ Keratomileusis."
+    },
+    {
+        "id": "10006",
+        "name": "Vitreo-Retina",
+        "image": "images/vitreo-retina.jpg",
+        "description": "The eye is like a camera with a lens in front and a film (retina) at the back. The cornea and lens in the front of the eye focus the rays of light onto the retina which then converts the image into electrical signals that are sent to the brain through the optic nerve."
+    },
+    {
+        "id": "10007",
+        "name": "Dry Eye",
+        "image": "images/dry-eyes.jpg",
+        "description": "Dry eye disease was recently redeﬁned as a multifactorial disease of the ocular surface characterized by a loss of homeostasis of the tear ﬁlm, and accompanied by ocular symptoms, in which tear ﬁlm instability and hyperosmolarity, ocular surface inﬂammation and damage and neurosensory abnormalities play etiological roles."
+    },
+    {
+        "id": "10008",
+        "name": "Cornea & External Disease",
+        "image": "images/cornea-external-disease.jpg",
+        "description": "Corneal and external diseases involve the cornea, anterior chamber of the eye, iris, lens, conjunctiva and eyelids, including cataracts; corneal allergies, infections and irregularities; refractive errors (nearsightedness, farsightedness and astigmatism); conjunctivitis (pink eye); dry eye; tear disorders; Keratoconus; Pterygium; Endophthalmitis; Fuchs Dystrophy and many others."
     }
+    
 ]
