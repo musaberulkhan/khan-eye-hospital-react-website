@@ -18,11 +18,14 @@ const Navigation = () => {
                         </button>
                         <div className="collapse navbar-collapse" id="navbarNavAltMarkup">
                             <div className="navbar-nav">
-                                <Link className="nav-link active" aria-current="page" to="/">HOME</Link>
-                                <Link className="nav-link" to="/services">SERVICES</Link>
-                                <Link className="nav-link" to="/doctors">DOCTORS</Link>                                
-                                <Link className="nav-link" to="/about">ABOUT</Link>                                
+                                <Link className="nav-link active" aria-current="page" to="/">Home</Link>
+                                <Link className="nav-link" to="/services">Services</Link>
+                                <Link className="nav-link" to="/doctors">Doctors</Link>                                
+                                <Link className="nav-link" to="/about">About</Link>                                
                             </div>
+                        </div>
+                        <div>
+                            <Link className="nav-link">Login</Link>
                         </div>
                     </div>
                 </nav>
