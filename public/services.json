@@ -1,0 +1,26 @@
+[
+    {
+        "id": "10001",
+        "name": "General Outpatient",
+        "image": "",
+        "description": "Patients who are referred for surgery from GOPD benefit from lower surgery charges with an option for further subsidies for the economically underprivileged. We are able to keep our GOPD fees low because we operate on the basis of cross subsidation. "
+    },
+    {
+        "id": "10002",
+        "name": "Private Outpatient",
+        "image": "",
+        "description": "The Private Outpatient’s department (POPD) of the hospital together with our sub- speciality services form a unique center for comprehensive ophthalmology in Bangladesh. An all-in-one facility which excels in the provision of advanced eye care."
+    },
+    {
+        "id": "10003",
+        "name": "Cataract Surgery ",
+        "image": "",
+        "description": "Cataracts occur when changes in the lens of the eye (which is normally clear) cause it to become less transparent. The lens is a crystalline structure that sits just behind the pupil (the black circle in the centre of the eye)."
+    },
+    {
+        "id": "10004",
+        "name": "Glaucoma Services",
+        "image": "",
+        "description": "Glaucoma is a symptomless silent killer of vision. we have worldclass facilities of glaucoma diagnosis , management and surgeries including implantation of glaucoma drainage devices."
+    }
+]
