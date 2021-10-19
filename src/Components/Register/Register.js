@@ -4,12 +4,14 @@ import useAuth from '../../Hooks/useAuth';
 import './Register';
 
 const Register = () => {
+    // ----------- States ------------
     const { registerUserUsingEmailPassword } = useAuth();
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
     const [reEnteredPassword, setReEnteredPassword] = useState('');
     const [errorMessage, setErrorMessage] = useState('');
 
+    // ----------- Handle Register Form Submit ------------
     const registerFormSubmit = (e) => {
         e.preventDefault();        
         const emailReg = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
@@ -31,12 +33,17 @@ const Register = () => {
     }
 
 
+    // ----------- Handle Email Change ------------
     const handleEmailChange = (e) => {
         setEmail(e.target.value);
     }
+
+    // ----------- Handle Password Change ------------
     const handlePasswordChange = (e) => {
         setPassword(e.target.value);
     }
+
+    // ----------- Handle Reentered Password Change ------------
     const handleReEnteredPasswordChange = (e) => {
         setReEnteredPassword(e.target.value);
     }
@@ -47,6 +54,8 @@ const Register = () => {
             <div className="login container d-flex justify-content-center align-items-center my-5">
                 <div className="login-container">
                     <h3 className="text-center mb-3">Create New Account</h3>
+
+                    {/* ----------- Register Form ------------ */}
                     <form onSubmit={registerFormSubmit}>
                         <div className="mb-3">
                             <label className="form-label">Email address</label>
@@ -65,6 +74,8 @@ const Register = () => {
                         </div>
                         <p className="text-danger">{errorMessage}</p>
                     </form>
+
+                    {/* ----------- Login Link ------------ */}
                     <p>Already have an account? <Link to="/login">Login</Link></p>
                 </div>
             </div>

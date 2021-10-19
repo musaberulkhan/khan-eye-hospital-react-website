@@ -6,7 +6,7 @@ const ServiceDetails = () => {
     const { serviceId } = useParams();
     const [service, setService] = useState()
 
-    // --------   Fetch and Set Course Data   ----------
+    // --------   Fetch and Set Services Data   ----------
     useEffect(() => {
         fetch('../services.json')
             .then(res => res.json())

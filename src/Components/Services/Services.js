@@ -14,6 +14,7 @@ const Services = () => {
         history.push(`servicedetails/${serviceId}`)
     }
 
+    // --------   Fetch Services Data from API   --------
     useEffect(() => {
         fetch('services.json')
             .then(res => res.json())
@@ -34,8 +35,6 @@ const Services = () => {
                 }
             </div>
         </div>
-
-
     );
 };
 

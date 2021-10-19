@@ -5,6 +5,7 @@ const Doctors = () => {
 
     const [doctors, setDoctors] = useState([]);
 
+    // ---------- Load Doctor from API ----------
     useEffect(()=>{
         fetch('doctors.json')
         .then(res => res.json())
@@ -14,6 +15,8 @@ const Doctors = () => {
     return (
         <div className="container pt-5">
             <h1 className="text-center my-5">Our Doctors</h1>
+
+            {/* // ---------- Display Doctors ---------- */}
             <div className="row row-cols-1 row-cols-md-5 g-2">
                 {
                     doctors.map(doctor => <Doctor

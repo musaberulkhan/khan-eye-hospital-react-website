@@ -6,10 +6,14 @@ const Footer = () => {
         <div className="footer">
             <div className="container">
                 <div className="row">
+
+                    {/* ---------  Column 1  ------------ */}
                     <div className="col-md-4 col-12 p-3">
                         <h5>Our Mission</h5>
                         <p className="mission pe-lg-3 fs-6"> As the eye care sector was growing rapidly in Bangladesh, a specialized hospital for the treatment of eye related diseases was much needed. It is the best eye care institute of the country and coordinates the provision of specialized ophthalmological services</p>
                     </div>
+
+                     {/* ---------  Column 2  ------------ */}
                     <div className="col-md-4 col-12 ps-md-5 p-3">
                         <div className="important-links">
                             <p>Important Links</p>
@@ -19,6 +23,9 @@ const Footer = () => {
                             <p className="mb-1"><a href="privacy-policy.html">Career</a></p>
                         </div>
                     </div>
+
+
+                     {/* ---------  Column 3  ------------ */}
                     <div className="col-md-4 col-12 p-3">
                         <p>Want to hear from us?</p>
                         <input type="email" className="w-100 px-2" placeholder="Your email address"/>
