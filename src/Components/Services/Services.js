@@ -1,10 +1,18 @@
 import React, { useEffect, useState } from 'react';
+import { useHistory } from 'react-router';
 import Service from './Service/Service';
 import './Services.css';
 
 const Services = () => {
 
     const [services, setServices] = useState([]);
+    let history = useHistory();
+
+
+     // --------   Handle View Details Click Listener   --------
+     const handleViewDetailsClick = (serviceId) => {
+        history.push(`servicedetails/${serviceId}`)
+    }
 
     useEffect(() => {
         fetch('services.json')
@@ -21,6 +29,7 @@ const Services = () => {
                     services.map(service => <Service
                         key={service.id}
                         service={service}
+                        handleViewDetailsClick={handleViewDetailsClick}
                     ></Service>)
                 }
             </div>

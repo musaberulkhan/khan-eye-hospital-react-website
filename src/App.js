@@ -12,6 +12,7 @@ import Appointment from './Components/Appointment/Appointment';
 import Doctors from './Components/Doctors/Doctors';
 import About from './Components/About/About';
 import NotFound from './Components/NotFound/NotFound';
+import ServiceDetails from './Components/ServiceDetails/ServiceDetails';
 
 function App() {
   return (
@@ -35,10 +36,13 @@ function App() {
               </Route>
               <Route path="/register">
                 <Register></Register>
-              </Route>              
+              </Route>
               <PrivateRoute path="/appointment">
-                  <Appointment></Appointment>
+                <Appointment></Appointment>
               </PrivateRoute>
+              <Route path="/servicedetails/:serviceId">
+                <ServiceDetails></ServiceDetails>
+              </Route>
               <Route exact path="/">
                 <Home></Home>
               </Route>

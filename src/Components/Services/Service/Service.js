@@ -3,6 +3,7 @@ import './Service.css';
 
 const Service = (props) => {
     const {id, name, image, description} = props.service;
+    const { handleViewDetailsClick } = props;
   
     return (
         <div className="col">
@@ -13,7 +14,7 @@ const Service = (props) => {
                     <p className="card-text">{`${description.slice(0, 100)}.....`}</p>
                 </div>
                 <div className="card-footer">
-                    <button className="w-100 btn btn-dark">View Details</button>
+                    <button onClick={() => handleViewDetailsClick(id)}  className="w-100 btn btn-dark">View Details</button>
                 </div>
             </div>
         </div >
