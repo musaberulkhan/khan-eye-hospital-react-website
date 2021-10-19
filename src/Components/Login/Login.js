@@ -1,17 +1,22 @@
 import React from 'react';
 import './Login.css';
 import GoogleImage from '../../Images/google.png';
-import { Link } from 'react-router-dom';
+import { Link, useLocation, useHistory } from 'react-router-dom';
 import useAuth from '../../Hooks/useAuth'
 import useFirebase from '../../Hooks/useFirebase';
 
 const Login = () => {
     const { signInUsingGoogle } = useAuth();
 
+    const location = useLocation();   
+
+    const history = useHistory();
+    const redirect_url = location.state?.from || '/';
+
     const handleGoogleSignIn = () => {
         signInUsingGoogle()
             .then(result => {
-                console.log(result);
+                history.push(redirect_url);
             })
     }
 

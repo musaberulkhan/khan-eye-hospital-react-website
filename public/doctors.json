@@ -1,0 +1,38 @@
+[
+    {
+        "id":"20001",
+        "name":"Francis Mason",
+        "designation":"Consultant Ophthalmologist",
+        "image":"doctorsImages/1.jpg"
+    },
+    {
+        "id":"20002",
+        "name":"Cherly Barnett",
+        "designation":"Comprehensive Eye & Cornea Specialist",
+        "image":"doctorsImages/2.jpg"
+    },
+    {
+        "id":"20003",
+        "name":"Daniel Beck",
+        "designation":"SMILE, LASIK, Phaco & Glaucoma Specialist",
+        "image":"doctorsImages/3.jpg"
+    },
+    {
+        "id":"20004",
+        "name":"Frederick Coleman",
+        "designation":"Vitreo-Retina Specialist",
+        "image":"doctorsImages/4.jpg"
+    },
+    {
+        "id":"20005",
+        "name":"Russell Rhodes",
+        "designation":"Consultant Ophthalmologist",
+        "image":"doctorsImages/5.jpg"
+    },
+    {
+        "id":"20006",
+        "name":"Jesse Baker",
+        "designation":"Comprehensive Eye & Cornea Specialist",
+        "image":"doctorsImages/6.jpg"
+    }
+]
