@@ -16,7 +16,7 @@ const Login = () => {
     }
 
     const loginFormSubmit = (e) => {
-        e.preventDefault();
+       
     }
 
 

@@ -2,9 +2,12 @@ import React from 'react';
 import './Navigation.css';
 import { BrowserRouter as Router, NavLink } from "react-router-dom";
 import Logo from '../../Images/logo.png';
+import useAuth from '../../Hooks/useAuth';
 
 
 const Navigation = () => {
+    const { user, logOut } = useAuth();
+    
     return (
         <nav className="navbar navbar-expand-lg navbar-light">
             <div className="container">
@@ -21,7 +24,16 @@ const Navigation = () => {
                     </div>
                 </div>
                 <div>
-                    <NavLink className="nav-link" to="/login">Login</NavLink>
+                    {
+                        user?.email ? 
+                        (
+                        <button className="btn btn-light" onClick={logOut}> Log Out </button>)
+                        :
+                        (
+                            <NavLink className="nav-link" to="/login">Login</NavLink>
+                        )
+                    }
+                   
                 </div>
             </div>
         </nav>
