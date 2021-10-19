@@ -1,0 +1,11 @@
+.footer{  
+    background-color:#363636; 
+    padding: 35px 10px 20px 10px; 
+    color: white;
+    position: absolute;
+    bottom: 0;
+    width: 100%;    
+}
+.footer .mission{  
+    text-align: justify; 
+}
