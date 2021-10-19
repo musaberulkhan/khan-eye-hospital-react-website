@@ -9,6 +9,9 @@ import Register from './Components/Register/Register';
 import Footer from './Components/Footer/Footer';
 import PrivateRoute from './Components/PrivateRoute/PrivateRoute';
 import Appointment from './Components/Appointment/Appointment';
+import Doctors from './Components/Doctors/Doctors';
+import About from './Components/About/About';
+import NotFound from './Components/NotFound/NotFound';
 
 function App() {
   return (
@@ -21,17 +24,26 @@ function App() {
               <Route path="/login">
                 <Login />
               </Route>
+              <Route path="/about">
+                <About></About>
+              </Route>
               <Route path="/services">
                 <Services />
               </Route>
+              <Route path="/doctors">
+                <Doctors></Doctors>
+              </Route>
               <Route path="/register">
                 <Register></Register>
-              </Route>
+              </Route>              
               <PrivateRoute path="/appointment">
                   <Appointment></Appointment>
               </PrivateRoute>
-              <Route path="/">
-                <Home />
+              <Route exact path="/">
+                <Home></Home>
+              </Route>
+              <Route path="*">
+                <NotFound></NotFound>
               </Route>
             </Switch>
           </div>

@@ -11,7 +11,7 @@ const Footer = () => {
                         <p className="mission pe-lg-3 fs-6"> As the eye care sector was growing rapidly in Bangladesh, a specialized hospital for the treatment of eye related diseases was much needed. It is the best eye care institute of the country and coordinates the provision of specialized ophthalmological services</p>
                     </div>
                     <div className="col-md-4 col-12 ps-md-5 p-3">
-                        <div>
+                        <div className="important-links">
                             <p>Important Links</p>
                             <p className="mb-1"><a href="privacy-policy.html">Privacy Policy</a></p>
                             <p className="mb-1"><a href="privacy-policy.html">Terms of Service</a></p>

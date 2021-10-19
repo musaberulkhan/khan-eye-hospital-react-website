@@ -7,7 +7,7 @@ import useAuth from '../../Hooks/useAuth';
 
 const Navigation = () => {
     const { user, logOut } = useAuth();
-    
+
     return (
         <nav className="navbar navbar-expand-lg navbar-light">
             <div className="container">
@@ -20,20 +20,26 @@ const Navigation = () => {
                 <div className="collapse navbar-collapse" id="navbarNavAltMarkup">
                     <div className="navbar-nav">
                         <NavLink className="nav-link" to="/">Home</NavLink>
-                        <NavLink className="nav-link" to="/services">Services</NavLink>                        
+                        <NavLink className="nav-link" to="/about">About</NavLink>
+                        <NavLink className="nav-link" to="/services">Services</NavLink>
+                        <NavLink className="nav-link" to="/doctors">Doctors</NavLink>
                     </div>
                 </div>
                 <div>
                     {
-                        user?.email ? 
-                        (
-                        <button className="btn btn-light" onClick={logOut}> Log Out </button>)
-                        :
-                        (
-                            <NavLink className="nav-link" to="/login">Login</NavLink>
-                        )
+                        user?.email ?
+                            (
+                                <div>
+                                    <span className="text-muted"><small>{user.email}</small></span>
+                                    <button className="btn btn-light ms-2" onClick={logOut}> Log Out </button>
+                                </div>
+                            )
+                            :
+                            (
+                                <NavLink className="nav-link" to="/login">Login</NavLink>
+                            )
                     }
-                   
+
                 </div>
             </div>
         </nav>

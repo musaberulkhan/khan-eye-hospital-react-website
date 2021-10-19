@@ -9,3 +9,13 @@
 .footer .mission{  
     text-align: justify; 
 }
+.footer .important-links a{  
+    text-decoration: none;
+    color: rgb(228, 228, 228);
+}
+
+.footer .important-links a:hover{  
+    text-decoration: none;
+    color: rgb(180, 180, 180);
+}
+
