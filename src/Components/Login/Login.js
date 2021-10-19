@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './Login.css';
 import GoogleImage from '../../Images/google.png';
 import { Link, useLocation, useHistory } from 'react-router-dom';
@@ -6,7 +6,10 @@ import useAuth from '../../Hooks/useAuth'
 import useFirebase from '../../Hooks/useFirebase';
 
 const Login = () => {
-    const { signInUsingGoogle } = useAuth();
+    const { signInUsingGoogle, signInUserUsingEmailPassword } = useAuth();
+    const [email, setEmail] = useState('');
+    const [password, setPassword] = useState('');
+    const [errorMessage, setErrorMessage] = useState('')
 
     const location = useLocation();   
 
@@ -20,8 +23,34 @@ const Login = () => {
             })
     }
 
+   
+
     const loginFormSubmit = (e) => {
-       
+        e.preventDefault();        
+        const emailReg = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+        const isEmailValid = emailReg.test(String(email).toLowerCase());
+        setErrorMessage("");
+
+
+        if(!isEmailValid){
+            setErrorMessage("Invalid Email Address");
+        }             
+        else if(password.length <= 6){         
+            setErrorMessage("Password Should be more than 6 characters");            
+        }        
+        else{
+            signInUserUsingEmailPassword(email, password);
+            history.push(redirect_url);
+        }
+    }
+
+
+
+    const handleEmailChange = (e) => {
+        setEmail(e.target.value);
+    }
+    const handlePasswordChange = (e) => {
+        setPassword(e.target.value);
     }
 
 
@@ -32,17 +61,20 @@ const Login = () => {
                 <form onSubmit={loginFormSubmit}>
                     <div className="mb-3">
                         <label className="form-label">Email address</label>
-                        <input type="email" className="form-control" placeholder="Your email address" />
+                        <input onBlur={handleEmailChange} type="email" className="form-control" placeholder="Your email address" />
                     </div>
                     <div className="mb-3">
                         <label className="form-label">Password</label>
-                        <input type="password" className="form-control" placeholder="Your password" />
+                        <input onBlur={handlePasswordChange} type="password" className="form-control" placeholder="Your password" />
                     </div>
                     <div className="mb-3 d-flex justify-content-center">
                         <input type="submit" className="btn btn-dark px-4" value="Login" />
                     </div>
+                    <p className="text-danger">{errorMessage}</p>
                 </form>
+
                 <p>Don't have an account? <Link to="/register">Create Account</Link></p>
+
                 <div className="d-flex flex-column align-items-center others-signin">
                     <p className="my-2">Or Login With</p>
                     <button onClick={handleGoogleSignIn} className="google-signin-btn">

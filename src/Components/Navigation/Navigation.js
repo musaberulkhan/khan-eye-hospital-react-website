@@ -11,7 +11,7 @@ const Navigation = () => {
     return (
         <nav className="navbar navbar-expand-lg navbar-light">
             <div className="container">
-                <NavLink className="navbar-brand me-5" to="/">
+                <NavLink className="navbar-brand me-3" to="/">
                     <img className="img-fluid navbar-brand-image" src={Logo} alt="" />
                     KHAN EYE HOSPITAL</NavLink>
                 <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
@@ -23,6 +23,12 @@ const Navigation = () => {
                         <NavLink className="nav-link" to="/about">About</NavLink>
                         <NavLink className="nav-link" to="/services">Services</NavLink>
                         <NavLink className="nav-link" to="/doctors">Doctors</NavLink>
+                        {
+                            user?.email && <NavLink className="nav-link" to="/livechat">Live Chat</NavLink>
+                        }
+                        {
+                            user?.email && <NavLink className="nav-link" to="/myprofile">My Profile</NavLink>
+                        }
                     </div>
                 </div>
                 <div>

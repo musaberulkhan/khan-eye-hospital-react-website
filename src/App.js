@@ -13,6 +13,8 @@ import Doctors from './Components/Doctors/Doctors';
 import About from './Components/About/About';
 import NotFound from './Components/NotFound/NotFound';
 import ServiceDetails from './Components/ServiceDetails/ServiceDetails';
+import LiveChat from './Components/LiveChat/LiveChat';
+import MyProfile from './Components/MyProfile/MyProfile';
 
 function App() {
   return (
@@ -39,6 +41,12 @@ function App() {
               </Route>
               <PrivateRoute path="/appointment">
                 <Appointment></Appointment>
+              </PrivateRoute>
+              <PrivateRoute path="/livechat">
+                <LiveChat></LiveChat>
+              </PrivateRoute>
+              <PrivateRoute path="/myprofile">
+                <MyProfile></MyProfile>
               </PrivateRoute>
               <Route path="/servicedetails/:serviceId">
                 <ServiceDetails></ServiceDetails>
