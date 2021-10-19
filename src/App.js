@@ -7,6 +7,8 @@ import Login from './Components/Login/Login';
 import AuthProvider from './Context/AuthProvider';
 import Register from './Components/Register/Register';
 import Footer from './Components/Footer/Footer';
+import PrivateRoute from './Components/PrivateRoute/PrivateRoute';
+import Appointment from './Components/Appointment/Appointment';
 
 function App() {
   return (
@@ -25,6 +27,9 @@ function App() {
               <Route path="/register">
                 <Register></Register>
               </Route>
+              <PrivateRoute path="/appointment">
+                  <Appointment></Appointment>
+              </PrivateRoute>
               <Route path="/">
                 <Home />
               </Route>
@@ -32,7 +37,7 @@ function App() {
           </div>
         </Router>
         <Footer></Footer>
-      </div>      
+      </div>
     </AuthProvider>
   );
 }

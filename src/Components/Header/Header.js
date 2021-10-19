@@ -1,6 +1,7 @@
 import React from 'react';
 import './Header.css';
 import HeaderImage from '../../Images/header-image.jpg';
+import { Link } from 'react-router-dom';
 
 const Header = () => {
     return (
@@ -12,7 +13,7 @@ const Header = () => {
                             <small>A journey of 10 years!</small>
                             <h1>Khan Eye Hospital</h1>
                             <p>We provide best eye care service since 2011</p>
-                            <button className="btn btn-dark">Book an Appointment</button>
+                            <Link className="btn btn-dark" to="/appointment">Book an Appointment</Link>
                         </div>
                     </div>
                     <div className="col-md-6 col-12 p-3">
