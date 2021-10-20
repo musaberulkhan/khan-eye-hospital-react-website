@@ -7,7 +7,7 @@ import useFirebase from '../../Hooks/useFirebase';
 
 const Login = () => {
     // ----------- States ------------
-    const { signInUsingGoogle, signInUserUsingEmailPassword } = useAuth();
+    const { signInUsingGoogle, signInUserUsingEmailPassword, setIsLoading, user } = useAuth();
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
     const [errorMessage, setErrorMessage] = useState('')
@@ -25,15 +25,33 @@ const Login = () => {
             .then(result => {
                 history.push(redirect_url);
             })
+            .finally(() => setIsLoading(false))
     }
+
+    // ----------- Handle Form Login ------------
+    const handleFormLogin = (email, password) => {
+        signInUserUsingEmailPassword(email, password)
+            .then((userCredential) => {
+                history.push(redirect_url);
+            })
+            .catch((error) => {
+                setErrorMessage("Invalid Email or Password!")
+            })
+            .finally(() => setIsLoading(false));
+    }
+
 
     // ----------- Handle Login Form Submit ------------
     const loginFormSubmit = (e) => {
         e.preventDefault();
+
+        // -----------   Email Validation   ----------
         const emailReg = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
         const isEmailValid = emailReg.test(String(email).toLowerCase());
         setErrorMessage("");
 
+
+        // -----------   Check for Error   ----------
         if (!isEmailValid) {
             setErrorMessage("Invalid Email Address");
         }
@@ -41,8 +59,7 @@ const Login = () => {
             setErrorMessage("Password Should be more than 6 characters");
         }
         else {
-            signInUserUsingEmailPassword(email, password);
-            history.push(redirect_url);
+            handleFormLogin(email, password);
         }
     }
 

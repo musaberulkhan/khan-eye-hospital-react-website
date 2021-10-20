@@ -1,15 +1,34 @@
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useHistory } from 'react-router-dom';
 import useAuth from '../../Hooks/useAuth';
 import './Register';
 
 const Register = () => {
     // ----------- States ------------
-    const { registerUserUsingEmailPassword } = useAuth();
+    const { registerUserUsingEmailPassword, setIsLoading } = useAuth();
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
     const [reEnteredPassword, setReEnteredPassword] = useState('');
     const [errorMessage, setErrorMessage] = useState('');
+
+
+     // ----------- Location ------------     
+     const history = useHistory();
+     const redirect_url = '/';
+
+
+    // ----------- Handle Form Login ------------
+    const handleFormLogin = (email, password) => {
+        registerUserUsingEmailPassword(email, password)
+            .then((userCredential) => {
+                history.push(redirect_url);
+            })
+            .catch((error) => {
+                setErrorMessage("Registration Failed!")
+            })
+            .finally(() => setIsLoading(false));
+    }
+
 
     // ----------- Handle Register Form Submit ------------
     const registerFormSubmit = (e) => {
@@ -28,7 +47,7 @@ const Register = () => {
             setErrorMessage("Password Should be more than 6 characters");            
         }        
         else{
-            registerUserUsingEmailPassword(email, password)
+            handleFormLogin(email, password)
         }
     }
 

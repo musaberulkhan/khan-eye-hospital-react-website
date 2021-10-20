@@ -34,5 +34,17 @@
         "name":"Jesse Baker",
         "designation":"Comprehensive Eye & Cornea Specialist",
         "image":"doctorsImages/6.jpg"
+    },
+    {
+        "id":"20007",
+        "name":"Tristan Jenkins",
+        "designation":"Vitreo-Retina Specialist",
+        "image":"doctorsImages/7.jpg"
+    },
+    {
+        "id":"20008",
+        "name":"Erin Curtis",
+        "designation":"Pathologist",
+        "image":"doctorsImages/8.jpg"
     }
 ]
